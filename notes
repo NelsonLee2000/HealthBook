@@ -1,0 +1,165 @@
+Date: Dec 11, 2023
+User authentication back-end is mostly completed.
+Next "
+  - confirm password section logic (done)
+  - react front-end for user authentication
+
+Date: Dec 12, 2023
+Front-end routes with buttons are completed.
+Next:
+  - ./client/src/api/auth.js set up apis on the front-end to connect to the backend, 34:14 on the tutorial
+
+Date: Dec 13, 2023
+Front-end login/logout/register/dashboard api functions are set-up
+System is completely secure with authorization at every refresh while in protected info
+login and log out works
+Next:
+  - customize the navigation and dashboard and learn how to make multiple pages protected routes
+  - backend CRUD for doctors
+
+Date: Dec 14, 2023
+Back-end get request to get-doctors returns all the doctors that belong to the signed into account.
+Next:
+  - post request to make a new doctor
+  - edit request to edit doctor information
+  - delete request to delete doctors
+
+Date: Dec 15, 2023
+All three above task are finished and work in postman. Also wrote the add doctors validations, and those work as well. Started the add doctors modal pop-up
+Next:
+  - finish add doctors modals and make sure it works properly with the apis. start at ../components/addDoctor. Partially finished on Dec 18th, the form works to post information into the database. Still can make better specific input attributes for phone number
+  - display all the doctors and appropriate information in a nice way using the GET request
+  - add an edit modal with a delete button that works properly with the apis
+
+Date: Dec 19, 2023
+2/3 task above were finished. Doctors are now displayed properly. Edit modals for each doctor are mapped as well.Editting function works.
+Next:
+  - when I hit cancel of the edit modal, the form should not save. continue with /client/comopents/editDoctor
+  - when I update the doctor information the order of the Doctor's listed should not change. maybe I need to sort by the doctor_id, before I map it out
+  - make a delete button inside the edit modal
+
+Date: Dec 20, 2023
+Completed 3/3 of the tasks above. Displayed doctors are always sorted according to doctor_id, delete button implemented with a confirmation modal. Cancelling in the modal with return all inputs to their default states. Additionally, figured out how to add, delete, and edit doctors while updating the modal without refreshing the page (better user experience).
+Next:
+  - maybe need to make sure that when people open up modals, they are openning up their own?
+  - need to make sure that if there are no notes, I don't display the category
+  - start working on the medicine page
+
+Date: Dec 23, 2023
+Complete 3/3 tasks above. When people are opeeing up modals, it is run locally on their computer. if the notes is empty, the notes: jsx will not render. Started working on the medicine page
+Next:
+  - work on the logic of the validators middleware for medicine
+  - find out a way to only perform a check on the doctor_id and other prescribers if the prescription is true. start at /server/src/validators/auth
+  - finish the post route for /medicine
+
+Date: Dec 30, 2023
+Worked on the validators middleware logic. Tried to make a custom checker, however the problem is that when a field is checked, they will automatically throw an error if it is empty. I need some medicines that are not prescribed to have empty doctor_id and other_prescriber. If the prescribed is ticked false, the validation should pass with those 2 fields being empty.
+Next:
+  - try to see if a foreign key in a table must be filled out, or if it's okay if it's empty upon posting a row of information
+  - start on server/src/validators/auth
+
+Date: Dec 31, 2023
+Was able to solve the problem by having a middleware function that returns the result of the check if the prescription value is true and the doctorId is empty. PUT and DELETE request for medicine also work on postman!
+Next:
+  - set-up react front-end for the medicine page
+
+Date: Jan 2, 2024
+Front-end if almost finished setting up, solved all the conditional rendering for the add medicine page. Showing all the medicines correctly. Deleting medicines also works.
+Next:
+  - make sure that after a doctor is selected in the drop down menu of the add medicine component, once the no prescription is pressed, the doctorId value is reset back to null.
+  - fix server-side add medicine validations, don't need to have to check for "other" in doctorId anymore
+  - bug test the add medicine component
+  - make sure that instead of getting the doctor_id on the medicine page, I want to get the doctor firstname that is associated with that doctor_id
+  - work on the edit button for medicine
+
+Date: Jan 3, 2024
+5/5 task above finsished. Learned how to use join in sql to fetch data from 2 related tables to display doctor info alongside the medicine. Started working on the edit button. It looks almost right however there are a few things to fix
+Next:
+  - the edit modal should have the doctor or other auto selected in the drop down menu if it was originally selected
+  - test that the modal is editting the information correctly even if prescription and other and doctorId changes
+  - start planning and working on appointments page
+
+Date: Jan 6, 2024
+2/3 tasks finished. However, there is a problem if you change the prescriber in the drop down menu and then close the modal and don't refresh, when the click back into the modal, the changed prescriber is actually in the modal even tho there hasn't been a change, maybe i need to refresh the modal evertime I click into it?
+Next:
+  - fix above problem with edit modal
+  - start planning and working on appointments page
+
+Date Jan 7, 2024
+2/2 tasks finished. Made sure that after selecting another prescriber and then closing the modal will not save the changes once the modal is openning up again. This this by setting a value prop for the select element. This allows the default value to be selected evertime a modal is openned up. Edit modal is now working like a charm. Also started working on the routes for the appointments. The get route is working on postman. I need to decide if i've set up the appointments database in a way I like.
+Next:
+  - research and consider getting rid of the time column and just having date? maybe this will be easier?
+  - finish the post, put, and delete route for the appointment apis 
+  - start working on the front end appointment page
+
+Date Jan 8, 2024
+2/3 tasks finished. Decided to keep a date and time column section for the appointments table, allows the front end booking system to be more flexible. Finished the post, put, and delete routes for the appointment apis.
+Next:
+  - start working on the appointments page front-end
+
+Date Jan 9, 2024
+1/1 tasks started. I have the get and post api's figured out for the front-end. Cannot seem to figure out how to reset the placeholder of the select element after choosing 'other' and then closing the modal. Finally fixed bug, all I needed was a seperate state that controlled whether the select was true or false. html is amazing and allowed me to do the date picker really easily
+Next: 
+  - work on selection of time on appointment front-end
+  - work on displaying a better looking date and time in the appointments page
+
+Date Jan 10, 2024
+Finished 1/2 tasks above: time is now selectable. Also finished the delete button for each appointment.
+Next: 
+  - finish the edit button. start at ../components/editAppointment
+  - work on displaying a better looking date and time in the appointments page
+
+Date Jan 11, 2024
+Finished 2/2 tasks. edit button is now finished, and the date and times are displaying better in the appiontments page. Appointments are now showing in the upcoming or previous sections. They are sorted based on date.
+Next:
+  - work on showing the year in front of the month if it is not in the current year and showing no year at all if it is the current year
+  - sort the appointments by times if the dates are the same
+  - maybe consider making a calendar that shows all the appointments on a month to month basis
+
+Date Jan 15, 2024
+Finished 2/2 task. Dates are formatted properly based on if they match with the current year. Additionally, the appointments will be sorted by the time if the date is the same. If the appointment is the current date, "today" will be displayed, if it is one day after the current date, tomorrow will be displayed.
+Next:
+  - work on the navigation bar, adding firstname and logout button
+  - think about getting rid of the dashboard
+  - start to style things and make things look nice
+  - we're almost done!!! :D
+
+Jan 17, 2024
+Finished adding the firstname, lastname, and logout button to the navigation bar.
+Next:
+  - try to make it so that eveytime the page loads, it doesn't need to get the name of the user, it just does it on login and then sets the name on the navbar so that it doesn' need to keep fetching eveytime. start at the ../components/navbar
+  - add a picture to the appointment postnotes
+  - add links from the appointment and medicine page that link back to the doctor
+
+Jan 22, 2024
+Finally did completed task 1, only fetching the name upon refresh and login. 
+Next:
+  - adding pictures to the postnotes and storing image data in the database
+  - making doctors clickable in the appointments and medicine page to show their information.
+
+Jan 23, 2024
+Doctors now display information upon clicking in appointment. Started working adding images to the S3 bucket, follow the tutorial.
+Next:
+  - allow doctors to be clickable in the medicine page as well
+  - begin to style the doctors page
+
+Jan 25, 2024
+Doctors are clickable in the appointments page as well. Began to style the doctors page
+Next:
+  - allow for the edit modal to be opened from the dropdown menu
+  - allow for the delete option to be ran from the dropdown menu
+  - being to style the medicine page
+
+Jan 28, 2024
+Edit modal can be openned from the dropdown menu. Delete option is available in the dropdown menu aswell.
+Next:
+  - being to style the medicine page
+  - maybe come back and make the doctors fit nicer into the page, too much lateral room
+
+Jan 29, 2024
+Doctors not fits 2 doctors on full screen. Medicine page is also styled and fits 3 entries per full page.
+Next:
+  - finish off the appointments page
+  - last minute styling
+  - test functions
+  - deloy website on heroku
