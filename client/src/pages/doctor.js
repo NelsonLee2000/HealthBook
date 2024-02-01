@@ -62,11 +62,11 @@ const Doctor = ({name}) => {
             <EditDoctor doctor={doctor} doctorList={doctorList}/>
             <DeleteDoctor doctor={doctor} doctorList={doctorList}/>
             <div class="card bg-secondary">
-              <div class="card-header d-flex justify-content-between align-items-center">
+              <div class="card-header d-flex justify-content-between align-items-center" style={{backgroundColor: "#8AC6FD"}}>
                 <div class='text-white'>{doctor.typeofdoc}</div>
                 <div class="dropdown">
-                  <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
                   </button>
                   <ul class="dropdown-menu">
                     <li>

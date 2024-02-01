@@ -64,11 +64,11 @@ const Medicine = ({name}) => {
               <div><DeleteMedicine medicine={medicine} medicineList={medicineList}/></div>
               <div><InfoDoctor doctor={medicine}/></div>
               <div class="card bg-secondary">
-                <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="card-header d-flex justify-content-between align-items-center" style={{backgroundColor: "#5FD5BD"}}>
                   <div class='text-white'>{medicine.name}</div>
                   <div class="dropdown">
-                    <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-ellipsis-vertical text-white"></i>
                     </button>
                     <ul class="dropdown-menu">
                       <li>
@@ -91,10 +91,10 @@ const Medicine = ({name}) => {
                     {medicine.prescription === false ? 
                       (<h6>non-prescription </h6>) 
                     : medicine.prescription === true && !medicine.doctor_id ? 
-                      (<h6><i class="fa-solid fa-file-prescription"></i> {medicine.other_prescriber}</h6>) 
+                      (<h6><i class="fa-solid fa-file-prescription me-1"></i> {medicine.other_prescriber}</h6>) 
                     : (  
                         <a style={{cursor: 'pointer'}} data-bs-toggle="modal" data-bs-target={`#infoid${medicine.doctor_id}`} >
-                          <h6 class="text-info">
+                          <h6 style={{color: "#8AC6FD"}}>
                             <i class="fa-solid fa-file-prescription me-1"></i> {medicine.firstname} {medicine.lastname}, {medicine.typeofdoc}
                           </h6>
                         </a>

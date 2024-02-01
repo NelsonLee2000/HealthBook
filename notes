@@ -165,7 +165,7 @@ Next:
   - deloy website on heroku
 
 Jan 31, 2024
-Appointments, medicine, and doctors pages are now all finished. All pages are also style appropriately if they are empty. Doctors are able to be deleted even if they are a foreign constraint in an appointment or medicine.
+Appointments, medicine, and doctors pages are now all finished. All pages are also style appropriately if they are empty. Doctors are able to be deleted even if they are a foreign constraint in an appointment or medicine. All appointments and medicine associated with the doctor will now cascade delete upon doctor deletion
 Next:
   - Think about what to do with home page
   - maybe add more colour?

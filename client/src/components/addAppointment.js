@@ -101,8 +101,8 @@ const AddAppointment = ({appointmentList}) => {
 
     return (
         <div>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAppointment">
-                <i class="fa-solid fa-plus"></i>
+            <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#addAppointment" style={{backgroundColor: "#65D582"}}>
+                <i class="fa-solid fa-plus text-white"></i>
             </button>
             <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
             <div class="modal fade" id="addAppointment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -125,11 +125,11 @@ const Appointment = ({name}) => {
                                     <EditAppointment appointment={appointment} appointmentList={appointmentList}/>
                                     <DeleteAppointment withYearDate={withYearDate} appointment={appointment} appointmentList={appointmentList}/>
                                     <div class="card bg-secondary">
-                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                        <div class="card-header d-flex justify-content-between align-items-center" style={{backgroundColor: "#65D582"}}>
                                             <div class='text-white'>{appointment.title}</div>
                                             <div class="dropdown">
-                                                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa-solid fa-ellipsis-vertical text-white"></i>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
@@ -150,7 +150,7 @@ const Appointment = ({name}) => {
                                                 {appointment.doctor_id 
                                                     ?(
                                                         <a style={{cursor: 'pointer'}} data-bs-toggle="modal" data-bs-target={`#infoid${appointment.doctor_id}`} >
-                                                            <h6 class="text-info">
+                                                            <h6 style={{color: "#8AC6FD"}}>
                                                             <i class="fa-solid fa-user-doctor me-1"></i> {appointment.firstname} {appointment.lastname}, {appointment.typeofdoc}
                                                             </h6>
                                                         </a>
@@ -212,11 +212,11 @@ const Appointment = ({name}) => {
                                         <EditAppointment appointment={appointment} appointmentList={appointmentList}/>
                                         <DeleteAppointment withYearDate={withYearDate} appointment={appointment} appointmentList={appointmentList}/>
                                         <div class="card bg-secondary">
-                                            <div class="card-header d-flex justify-content-between align-items-center">
+                                            <div class="card-header d-flex justify-content-between align-items-center" style={{backgroundColor: "#65D582"}}>
                                                 <div class='text-white'>{appointment.title}</div>
                                                 <div class="dropdown">
-                                                    <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical text-white"></i>
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li>
@@ -236,7 +236,7 @@ const Appointment = ({name}) => {
                                                 <p class="card-text">
                                                     {appointment.doctor_id 
                                                         ?(<a style={{cursor: 'pointer'}} data-bs-toggle="modal" data-bs-target={`#infoid${appointment.doctor_id}`} >
-                                                            <h6 class="text-info">
+                                                            <h6 style={{color: "#8AC6FD"}}>
                                                                 <i class="fa-solid fa-user-doctor me-1"></i> {appointment.firstname} {appointment.lastname}, {appointment.typeofdoc}
                                                             </h6>
                                                         </a>) 

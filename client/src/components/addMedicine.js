@@ -107,8 +107,8 @@ const AddMedicine = ({medicineList}) => {
 
     return (
         <div>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMedicine">
-            <i class="fa-solid fa-plus"></i>
+            <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#addMedicine" style={{backgroundColor:"#5FD5BD"}}>
+            <i class="fa-solid fa-plus text-white"></i>
             </button>
             <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
             <div class="modal fade" id="addMedicine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
