@@ -19,12 +19,13 @@ const DeleteDoctor = ({doctor, doctorList}) => {
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Doctor</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Professional</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <div class="modal-body">
-                    Delete {doctor.firstname} {doctor.lastname} {doctor.typeofdoc}?
+                    <p>Delete {doctor.firstname} {doctor.lastname}, {doctor.typeofdoc}?</p>
+                    <p class="text-danger">Warning: Deleting this professional will also delete all medication and appointments associated with this individual</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

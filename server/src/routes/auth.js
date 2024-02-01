@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const { getUser, register, login, protected, logout, getDoctors, newDoctor, editDoctor, deleteDoctor, getMedicine, newMedicine, editMedicine, deleteMedicine, getAppointments, newAppointment, editAppointment, deleteAppointment, newImage, newUpload} = require('../controllers/auth');
+const { getUser, register, login, protected, logout, getDoctors, newDoctor, editDoctor, deleteDoctor, getMedicine, newMedicine, editMedicine, deleteMedicine, getAppointments, newAppointment, editAppointment, deleteAppointment} = require('../controllers/auth');
 const { registerValidation, loginValidation, doctorValidation, medicineValidation, appointmentValidation } = require('../validators/auth');
 const { validationsMiddleware } = require('../middlewares/validations-middleware');
 const { userAuth } = require('../middlewares/auth-middleware');
@@ -29,9 +29,5 @@ router.post('/appointment', appointmentValidation, validationsMiddleware, newApp
 router.put('/appointment/:id', appointmentValidation, validationsMiddleware, editAppointment) //works on postman!
 router.delete('/appointment/:id', userAuth, deleteAppointment) //works on postman!
 
-// const storage = multer.memoryStorage()
-// const upload = multer({ storage: storage })
-// router.post('/image', upload.single('image'), newImage)
-//start here
 
 module.exports = router

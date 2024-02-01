@@ -110,9 +110,6 @@ const EditAppointment = ({appointment, appointmentList}) => {
 
     return (
         <div>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#editAppointmentId${appointment.appointment_id}`}>
-            Edit
-            </button>
             <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
             <div class="modal fade" id={`editAppointmentId${appointment.appointment_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -157,9 +157,18 @@ Next:
   - maybe come back and make the doctors fit nicer into the page, too much lateral room
 
 Jan 29, 2024
-Doctors not fits 2 doctors on full screen. Medicine page is also styled and fits 3 entries per full page.
+Doctors page now fits 2 doctors on full screen. Medicine page is also styled and fits 3 entries per full page.
 Next:
   - finish off the appointments page
-  - last minute styling
+  - last minute styling (conditions if there is an empty page)
   - test functions
   - deloy website on heroku
+
+Jan 31, 2024
+Appointments, medicine, and doctors pages are now all finished. All pages are also style appropriately if they are empty. Doctors are able to be deleted even if they are a foreign constraint in an appointment or medicine.
+Next:
+  - Think about what to do with home page
+  - maybe add more colour?
+  - think about making the cards difference colours for each page
+  - test functions
+  - deploy website on heroku

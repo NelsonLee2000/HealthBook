@@ -50,6 +50,13 @@ const Medicine = ({name}) => {
           <h1>Medicine</h1>
           <div class='ms-auto bd-highlight'style={{ paddingLeft: '1rem' }}><AddMedicine medicineList={medicineList}/></div>
         </div>
+        {!medicine.length 
+        ?(
+        <div>
+          <h4 class='d-flex justify-content-end align-items-top me-2'>Add Medicine <i class="fa-solid fa-turn-up ms-2"></i></h4>
+          <h1 class='d-flex align-items-center justify-content-center' style={{height: '60vh'}}>No Medicine Added</h1>
+        </div>
+        ):(
         <div class='d-flex flex-wrap justify-content-between'>
           {medicine.map((medicine) => (
             <div key={medicine.medicine_id} style={{ width:'400px', paddingBottom: '0.5rem' }}>
@@ -97,7 +104,9 @@ const Medicine = ({name}) => {
               </div>
             </div>
           ))}
-        </div>
+        </div>  
+        )}
+        
       </Layout>
     </div>
   )

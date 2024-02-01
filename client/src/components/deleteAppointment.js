@@ -15,10 +15,6 @@ const DeleteAppointment = ({appointment, appointmentList, withYearDate}) => {
 
     return (
         <>
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target={`#deleteappointmentid${appointment.appointment_id}`}>
-            Delete
-            </button>
-
             <div class="modal fade" id={`deleteappointmentid${appointment.appointment_id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
