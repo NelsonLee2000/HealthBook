@@ -172,3 +172,11 @@ Next:
   - think about making the cards difference colours for each page
   - test functions
   - deploy website on heroku
+
+Feb 1, 2024
+Each page has a different colour theme. Navbar is now styled. Home page is almost done.
+Next:
+  - read over features in home page and make edits
+  - have a register and/or login link in the home page
+  - last minute testing
+  - delploy website on heroku
