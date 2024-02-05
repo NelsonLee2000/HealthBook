@@ -76,27 +76,3 @@ INSERT INTO doctor(
     ) VALUES (
         'Daphne', 'Cheng', 'Optometrist', '6048210202', 'Aberdeen Square', 'lasik pre and post-op Optometrist', 8
     );
-
-DELETE FROM doctor WHERE doctor_id = 3;
-
-INSERT into medicine(name, function, frequency, doctor_id, user_id) VALUES('blood pressure medication', 'lowers blood pressure', 'once a day', 5, 8);
-
-ALTER TABLE medicine ADD COLUMN other_prescriber VARCHAR(255), ADD COLUMN prescription BOOLEAN;
-
-ALTER TABLE medicine
-DROP CONSTRAINT fk_doctor_medicine;
-
-ALTER TABLE medicine
-ADD CONSTRAINT fk_doctor_medicine
-FOREIGN KEY (doctor_id)
-REFERENCES doctor(doctor_id)
-ON DELETE CASCADE;
-
-ALTER TABLE appointment
-DROP CONSTRAINT fk_doctor_appointment;
-
-ALTER TABLE appointment
-ADD CONSTRAINT fk_doctor_appointment
-FOREIGN KEY (doctor_id)
-REFERENCES doctor(doctor_id)
-ON DELETE CASCADE;

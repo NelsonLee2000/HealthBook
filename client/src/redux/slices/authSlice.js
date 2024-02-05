@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+//checking if there is an isAuth item in local storage
 const userAuthFromLocalStorage = () => {
   const isAuth = localStorage.getItem('isAuth')
 

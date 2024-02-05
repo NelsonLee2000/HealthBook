@@ -15,6 +15,7 @@ const opts = {
     jwtFromRequest: cookieExtractor,
 };
 
+//returns an object user with a corresponding id and email 
 passport.use(
     new Strategy(opts, async ({ id }, done) => {
         try {

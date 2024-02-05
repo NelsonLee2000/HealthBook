@@ -180,3 +180,9 @@ Next:
   - have a register and/or login link in the home page
   - last minute testing
   - delploy website on heroku
+  - format code to look nice
+
+Feb 4, 2024
+Made final edits to the home page. Did a bit of last minute testing. cleaned up code, changing all class in react to className. Used prettier to clean up code formatting.
+Next:
+  - deploy website on heroku
