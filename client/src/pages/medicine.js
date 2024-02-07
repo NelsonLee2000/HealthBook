@@ -72,7 +72,12 @@ const Medicine = ({ name }) => {
             {medicine.map((medicine) => (
               <div
                 key={medicine.medicine_id}
-                style={{ width: "432px", paddingBottom: "0.5rem" }}
+                style={{
+                  width: "33%",
+                  paddingBottom: "0.5rem",
+                  minWidth: "400px",
+                  maxWidth: "700px",
+                }}
                 className="p-2"
               >
                 <div>

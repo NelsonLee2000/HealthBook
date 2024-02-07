@@ -148,7 +148,13 @@ const Appointment = ({ name }) => {
                   .map((appointment) => (
                     <div
                       key={appointment.appointment_id}
-                      style={{ width: "432px", paddingBottom: "0.5rem" }}
+                      style={{
+                        width: "33%",
+                        paddingBottom: "0.5rem",
+                        minWidth: "400px",
+                        maxWidth: "700px",
+                        paddingBottom: "0.5rem",
+                      }}
                       className="p-2"
                     >
                       <InfoDoctor doctor={appointment} />
@@ -203,17 +209,6 @@ const Appointment = ({ name }) => {
                         <div className="card-body text-white">
                           <p className="card-text">
                             {appointment.doctor_id ? ( //if the appointment has a doctor, display it, if not, dispaly the other_professional
-                              //   <a
-                              //     style={{ cursor: "pointer" }}
-                              //     data-bs-toggle="modal"
-                              //     data-bs-target={`#infoid${appointment.doctor_id}`}
-                              //   >
-                              //     <h6 style={{ color: "#8AC6FD" }}>
-                              //       <i className="fa-solid fa-user-doctor me-1"></i>{" "}
-                              //       {appointment.firstname} {appointment.lastname}
-                              //       , {appointment.typeofdoc}
-                              //     </h6>
-                              //   </a>
                               <button
                                 data-bs-toggle="modal"
                                 data-bs-target={`#infoid${appointment.doctor_id}`}

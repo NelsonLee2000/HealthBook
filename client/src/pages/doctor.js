@@ -45,103 +45,117 @@ const Doctor = ({ name }) => {
   ) : (
     <div>
       <Layout name={name}>
-        <div className="mt-3 d-flex align-items-center">
-          <h1>
-            <i className="fa-solid fa-user-doctor me-3"></i>
-          </h1>
-          <h1>Professionals</h1>
-          <div className="ms-auto bd-highlight" style={{ paddingLeft: "1rem" }}>
-            <AddDoctor doctorList={doctorList} />
-          </div>
-        </div>
-        {!doctors.length ? ( //if there is nothing added to professionals, show no professionals added
-          <div>
-            <h4 className="d-flex justify-content-end align-items-top me-2">
-              Add Professionals <i className="fa-solid fa-turn-up ms-2"></i>
-            </h4>
-            <h1
-              className="d-flex align-items-center justify-content-center"
-              style={{ height: "60vh" }}
-            >
-              No Professionals Added
+        <div className="w-100">
+          <div className="mt-3 d-flex align-items-center">
+            <h1>
+              <i className="fa-solid fa-user-doctor me-3"></i>
             </h1>
+            <h1>Professionals</h1>
+            <div
+              className="ms-auto bd-highlight"
+              style={{ paddingLeft: "1rem" }}
+            >
+              <AddDoctor doctorList={doctorList} />
+            </div>
           </div>
-        ) : (
-          <div className="d-flex flex-wrap justify-content-start">
-            {doctors.map((doctor) => (
-              <div
-                key={doctor.doctor_id}
-                style={{ width: "637px", paddingBottom: "0.5rem" }}
-                className="p-2"
+          {!doctors.length ? ( //if there is nothing added to professionals, show no professionals added
+            <div>
+              <h4 className="d-flex justify-content-end align-items-top me-2">
+                Add Professionals <i className="fa-solid fa-turn-up ms-2"></i>
+              </h4>
+              <h1
+                className="d-flex align-items-center justify-content-center"
+                style={{ height: "60vh" }}
               >
-                <EditDoctor doctor={doctor} doctorList={doctorList} />
-                <DeleteDoctor doctor={doctor} doctorList={doctorList} />
-                <div className="card bg-secondary">
+                No Professionals Added
+              </h1>
+            </div>
+          ) : (
+            <div className=" d-flex justify-content-center">
+              <div
+                className="d-flex flex-wrap justify-content-start"
+                style={{ width: "100%" }}
+              >
+                {doctors.map((doctor) => (
                   <div
-                    className="card-header d-flex justify-content-between align-items-center"
-                    style={{ backgroundColor: "#8AC6FD" }}
+                    key={doctor.doctor_id}
+                    style={{
+                      paddingBottom: "",
+                      minWidth: "400px",
+                      maxWidth: "700px",
+                    }}
+                    className="p-2 w-50"
                   >
-                    <div className="text-white">{doctor.typeofdoc}</div>
-                    <div className="dropdown">
-                      <button
-                        className="btn"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
+                    <EditDoctor doctor={doctor} doctorList={doctorList} />
+                    <DeleteDoctor doctor={doctor} doctorList={doctorList} />
+                    <div className="card bg-secondary">
+                      <div
+                        className="card-header d-flex justify-content-between align-items-center"
+                        style={{ backgroundColor: "#8AC6FD" }}
                       >
-                        <i className="fa-solid fa-ellipsis-vertical text-white"></i>
-                      </button>
-                      <ul className="dropdown-menu">
-                        <li>
+                        <div className="text-white">{doctor.typeofdoc}</div>
+                        <div className="dropdown">
                           <button
+                            className="btn"
                             type="button"
-                            classNameName="btn btn-white dropdown-item"
-                            data-bs-toggle="modal"
-                            data-bs-target={`#editid${doctor.doctor_id}`}
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
                           >
-                            Edit
+                            <i className="fa-solid fa-ellipsis-vertical text-white"></i>
                           </button>
-                        </li>
-                        <li>
-                          <button
-                            type="button"
-                            className="dropdown-item"
-                            data-bs-toggle="modal"
-                            data-bs-target={`#deleteid${doctor.doctor_id}`}
-                          >
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
+                          <ul className="dropdown-menu">
+                            <li>
+                              <button
+                                type="button"
+                                className="btn btn-white dropdown-item"
+                                data-bs-toggle="modal"
+                                data-bs-target={`#editid${doctor.doctor_id}`}
+                              >
+                                Edit
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                className="btn btn-white dropdown-item"
+                                data-bs-toggle="modal"
+                                data-bs-target={`#deleteid${doctor.doctor_id}`}
+                              >
+                                Delete
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="card-body text-white">
+                        <h5 className="card-title">
+                          {doctor.firstname} {doctor.lastname}
+                        </h5>
+                        <p className="card-text">
+                          <h6>
+                            <i className="fa-solid fa-phone"></i>{" "}
+                            {doctor.phonenumber}
+                          </h6>
+                          <h6>
+                            <i className="fa-solid fa-location-dot me-1"></i>{" "}
+                            {doctor.location}
+                          </h6>
+                          {doctor.notes && (
+                            <h6>
+                              <i className="fa-solid fa-clipboard me-1"></i>{" "}
+                              {doctor.notes}
+                            </h6>
+                          )}
+                        </p>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="card-body text-white">
-                    <h5 className="card-title">
-                      {doctor.firstname} {doctor.lastname}
-                    </h5>
-                    <p className="card-text">
-                      <h6>
-                        <i className="fa-solid fa-phone"></i>{" "}
-                        {doctor.phonenumber}
-                      </h6>
-                      <h6>
-                        <i className="fa-solid fa-location-dot me-1"></i>{" "}
-                        {doctor.location}
-                      </h6>
-                      {doctor.notes && (
-                        <h6>
-                          <i className="fa-solid fa-clipboard me-1"></i>{" "}
-                          {doctor.notes}
-                        </h6>
-                      )}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </Layout>
     </div>
   );

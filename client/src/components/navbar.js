@@ -18,7 +18,7 @@ const Navbar = ({ name }) => {
   };
 
   return (
-    <nav className="navbar navbar-light bg-light border">
+    <nav className="navbar navbar-light bg-light border w-100">
       <div className="container">
         <div>
           <NavLink to="/" style={{ textDecoration: "none" }}>
