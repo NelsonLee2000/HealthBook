@@ -41,17 +41,13 @@ exports.register = async (req, res) => {
 //gives login cookie
 exports.login = async (req, res) => {
     let user = req.user;
-    console.log({"user":user});
     let payload = {
         id: user.user_id,
         email: user.email
     };
-    console.log({"payload": payload});
     try {
         const token = await sign(payload, SECRET);
-        console.log({"token":token});
 
-        console.log("trying to give cookie");
         return res.status(200).cookie('token', token, {httpOnly: true, sameSite: 'None', secure: true}).json({
             success: true,
             message: 'Logged in successfully',
