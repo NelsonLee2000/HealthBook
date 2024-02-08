@@ -1,9 +1,12 @@
 const express = require('express');
-const { PORT, CLIENT_URL } = require('./constants');
+const { CLIENT_URL } = require('./constants');
 const app = express();
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const cors = require('cors');
+const {config} = require('dotenv');
+
+
 
 //import passport middleware
 require('./middlewares/passport-middleware')
@@ -14,6 +17,8 @@ app.use(cookieParser());
 app.use(cors({origin: CLIENT_URL, credentials: true})); 
 app.use(passport.initialize())
 
+//dynamic port
+const port = process.env.PORT || 4000;
 
 //import routes
 const authRoutes = require('./routes/auth');
@@ -25,8 +30,8 @@ app.use('/api', authRoutes);
 
 const appStart = () => {
     try {
-        app.listen(PORT, () => {
-            console.log(`The app is running at http://localhost:${PORT}`);
+        app.listen(port, () => {
+            console.log(`The app is running on port ${port}`);
         });
     } catch (err) {
         console.error(err.message);

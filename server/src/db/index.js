@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const { EX_DB_URL } = require('../constants');
+const { IN_DB_URL } = require('../constants');
 
 //local connection
 // const pool = new Pool({
@@ -20,7 +20,7 @@ const { EX_DB_URL } = require('../constants');
 
 //external connection
 const pool = new Pool({
-    connectionString: EX_DB_URL,
+    connectionString: IN_DB_URL,
     ssl: {
         rejectUnauthorized: false, // Use this for connecting to Render.com databases
       },
