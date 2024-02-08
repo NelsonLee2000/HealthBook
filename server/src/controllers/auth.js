@@ -52,7 +52,7 @@ exports.login = async (req, res) => {
         console.log({"token":token});
 
         console.log("trying to give cookie");
-        return res.status(200).cookie('token', token, {httpOnly: true}).json({
+        return res.status(200).cookie('token', token, {httpOnly: true, sameSite: 'None', secure: true}).json({
             success: true,
             message: 'Logged in successfully',
         });
