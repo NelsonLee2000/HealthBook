@@ -30,7 +30,8 @@ const Doctor = ({ name }) => {
       setDoctors(sortedData);
       setLoading(false);
     } catch (err) {
-      logout();
+      // logout();
+      console.error(err.message);
     }
   };
 

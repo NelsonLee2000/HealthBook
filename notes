@@ -188,6 +188,8 @@ Next:
   - deploy website on heroku
 
 Feb 7, 2024
-Database is live on Render.com. local server is connected to the database via external URL.
+Database is live on Render.com. Backend is live on Render.com. Local front end is not able to get cookie from login function, however postman is able to get cookie from login function. Investigate.
 Next:
-  - host the serverside on Render.com as well and connect to the db using the internal URL.
+  - investigate why local front-end is not able to get cookies from the backend
+  - finally deploy the front end and connect with the server
+  - FINISH THE DEPLOY!
