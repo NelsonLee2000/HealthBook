@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const { IN_DB_URL } = require('../constants');
+const { IN_DB_URL, DB_USER, DB_HOST, DB_PORT, DB_DATABASE, DB_PASSWORD } = require('../constants');
 
 //local connection
 // const pool = new Pool({
@@ -10,21 +10,21 @@ const { IN_DB_URL } = require('../constants');
 // });
 
 //internal connection
-// const pool = new Pool({
-//     user: process.env.DB_USER,
-//     host: process.env.DB_HOST,
-//     port: process.env.DB_PORT,
-//     database: process.env.DB_DATABASE,
-//     password: process.env.DB_PASSWORD,
-// });
+const pool = new Pool({
+    user: DB_USER,
+    host: DB_HOST,
+    port: DB_PORT,
+    database: DB_DATABASE,
+    password: DB_PASSWORD,
+});
 
 //external connection
-const pool = new Pool({
-    connectionString: IN_DB_URL,
-    ssl: {
-        rejectUnauthorized: false, // Use this for connecting to Render.com databases
-      },
-});
+// const pool = new Pool({
+//     connectionString: EX_DB_URL,
+//     ssl: {
+//         rejectUnauthorized: false, // Use this for connecting to Render.com databases
+//       },
+// });
 
 pool.connect((err) => {
     if (err) {
