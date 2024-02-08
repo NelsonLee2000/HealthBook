@@ -24,7 +24,7 @@ CREATE TABLE doctor(
         ON DELETE CASCADE
 );
 
-CREATE TABLE appointment(
+CREATE TABLE appointment (
     appointment_id SERIAL PRIMARY KEY,
     title VARCHAR(50),
     date DATE,
@@ -32,32 +32,33 @@ CREATE TABLE appointment(
     prenotes VARCHAR(255),
     postnotes VARCHAR(255),
     doctor_id INT,
-        CONSTRAINT fk_doctor_appointment
+    other_professional VARCHAR(255),
+    user_id INT,
+    CONSTRAINT fk_doctor_appointment
         FOREIGN KEY (doctor_id)
         REFERENCES doctor(doctor_id)
-        ON DELETE CASCADE
-    user_id INT,
-        CONSTRAINT fk_user_appointment
+        ON DELETE CASCADE,
+    CONSTRAINT fk_user_appointment
         FOREIGN KEY (user_id)
         REFERENCES "user"(user_id)
         ON DELETE CASCADE
 );
 
-CREATE TABLE medicine(
+CREATE TABLE medicine (
     medicine_id SERIAL PRIMARY KEY,
     name VARCHAR(50),
     function VARCHAR(255),
     frequency VARCHAR(50),
-    doctor_id INT, 
-        CONSTRAINT fk_doctor_medicine
+    doctor_id INT,
+    user_id INT,
+    CONSTRAINT fk_doctor_medicine
         FOREIGN KEY (doctor_id)
         REFERENCES doctor(doctor_id)
-        ON DELETE CASCADE
-    user_id INT,
-        CONSTRAINT fk_user_medicine
+        ON DELETE CASCADE,
+    CONSTRAINT fk_user_medicine
         FOREIGN KEY (user_id)
         REFERENCES "user"(user_id)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
     other_prescriber VARCHAR(255),
     prescription BOOLEAN
 );
@@ -76,3 +77,9 @@ INSERT INTO doctor(
     ) VALUES (
         'Daphne', 'Cheng', 'Optometrist', '6048210202', 'Aberdeen Square', 'lasik pre and post-op Optometrist', 8
     );
+
+ALTER TABLE appointment
+ADD COLUMN other_prescriber VARCHAR(255);
+
+ALTER TABLE appointment
+RENAME COLUMN other_prescriber TO other_professional;

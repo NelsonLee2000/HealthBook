@@ -4,7 +4,6 @@ const { registerValidation, loginValidation, doctorValidation, medicineValidatio
 const { validationsMiddleware } = require('../middlewares/validations-middleware');
 const { userAuth } = require('../middlewares/auth-middleware');
 const router = Router();
-const multer = require('multer')
 
 //routes for register, login, and get user
 router.get('/user', getUser);

@@ -186,3 +186,8 @@ Feb 4, 2024
 Made final edits to the home page. Did a bit of last minute testing. cleaned up code, changing all class in react to className. Used prettier to clean up code formatting.
 Next:
   - deploy website on heroku
+
+Feb 7, 2024
+Database is live on Render.com. local server is connected to the database via external URL.
+Next:
+  - host the serverside on Render.com as well and connect to the db using the internal URL.
