@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
     try {
         const token = await sign(payload, SECRET);
 
-        return res.status(200).cookie('token', token, {httpOnly: true, secure: true}).json({
+        return res.status(200).cookie('token', token, {httpOnly: true, sameSite: 'None', secure: true}).json({
             success: true,
             message: 'Logged in successfully',
         });
@@ -63,7 +63,7 @@ exports.login = async (req, res) => {
 //clears cookie
 exports.logout = async (req, res) => {
     try {
-        return res.status(200).clearCookie('token', {httpOnly: true}).json({
+        return res.status(200).clearCookie('token', {httpOnly: true, sameSite: 'None', secure: true}).json({
             success: true,
             message: 'Logged out successfully',
         }); 
