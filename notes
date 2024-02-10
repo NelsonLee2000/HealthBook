@@ -194,4 +194,7 @@ Next:
   - finally deploy the front end and connect with the server
   - FINISH THE DEPLOY!
 
-  
+Feb 8, 2024
+Client is live and works with the server, however is the site is refreshed, the site crahses. This is because chrome is clocking third party cookies. And because my server and client is not hosted on the same root domain, the cookie that is sent from my server is a third party cookie.
+Next:
+  - try to get a custom domain so that both client and server side can have the same root domain, this way cookies that are sent from the server are legal cookies
