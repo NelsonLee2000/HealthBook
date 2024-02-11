@@ -1,5 +1,5 @@
 const express = require('express');
-const { PORT, CLIENT_URL } = require('./constants');
+const { CLIENT_URL } = require('./constants');
 const app = express();
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
