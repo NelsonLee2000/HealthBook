@@ -3,17 +3,17 @@ axios.defaults.withCredentials = true;
 
 export async function onRegistration(registrationData) {
   return await axios.post(
-    "http://localhost:4000/api/register",
+    "https://healthbook-server.onrender.com/api/register",
     registrationData
   );
 }
 
 export async function onLogin(loginData) {
-  return await axios.post("http://localhost:4000/api/login", loginData);
+  return await axios.post("https://healthbook-server.onrender.com/api/login", loginData);
 }
 
 export async function onLogout() {
-  return axios.get("http://localhost:4000/api/logout");
+  return axios.get("https://healthbook-server.onrender.com/api/logout");
 }
 
 export async function fetchUser() {
@@ -23,7 +23,7 @@ export async function fetchUser() {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.get("http://localhost:4000/api/user", config);
+  return axios.get("https://healthbook-server.onrender.com/api/user", config);
 }
 
 export async function onAddDoctor(doctorData) {
@@ -33,7 +33,7 @@ export async function onAddDoctor(doctorData) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.post("http://localhost:4000/api/doctor", doctorData, config);
+  return axios.post("https://healthbook-server.onrender.com/api/doctor", doctorData, config);
 }
 
 export async function fetchDoctorList() {
@@ -43,7 +43,7 @@ export async function fetchDoctorList() {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.get("http://localhost:4000/api/doctor", config);
+  return axios.get("https://healthbook-server.onrender.com/api/doctor", config);
 }
 
 export async function onDeleteDoctor(doctorId) {
@@ -53,7 +53,7 @@ export async function onDeleteDoctor(doctorId) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.delete(`http://localhost:4000/api/doctor/${doctorId}`, config);
+  return axios.delete(`https://healthbook-server.onrender.com/api/doctor/${doctorId}`, config);
 }
 
 export async function onEditDoctor(doctorId, updatedData) {
@@ -63,7 +63,7 @@ export async function onEditDoctor(doctorId, updatedData) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.put(`http://localhost:4000/api/doctor/${doctorId}`, updatedData, config);
+  return axios.put(`https://healthbook-server.onrender.com/api/doctor/${doctorId}`, updatedData, config);
 }
 
 export async function fetchMedicineList() {
@@ -73,7 +73,7 @@ export async function fetchMedicineList() {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.get("http://localhost:4000/api/medicine", config);
+  return axios.get("https://healthbook-server.onrender.com/api/medicine", config);
 }
 
 export async function onDeleteMedicine(medicineId) {
@@ -83,7 +83,7 @@ export async function onDeleteMedicine(medicineId) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.delete(`http://localhost:4000/api/medicine/${medicineId}`, config);
+  return axios.delete(`https://healthbook-server.onrender.com/api/medicine/${medicineId}`, config);
 }
 
 export async function onAddMedicine(medicineData) {
@@ -93,7 +93,7 @@ export async function onAddMedicine(medicineData) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.post("http://localhost:4000/api/medicine", medicineData, config);
+  return axios.post("https://healthbook-server.onrender.com/api/medicine", medicineData, config);
 }
 
 export async function onEditMedicine(medicineId, updatedData) {
@@ -104,7 +104,7 @@ export async function onEditMedicine(medicineId, updatedData) {
     },
   };
   return axios.put(
-    `http://localhost:4000/api/medicine/${medicineId}`,
+    `https://healthbook-server.onrender.com/api/medicine/${medicineId}`,
     updatedData, config
   );
 }
@@ -116,7 +116,7 @@ export async function fetchAppointmentList() {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.get("http://localhost:4000/api/appointment", config);
+  return axios.get("https://healthbook-server.onrender.com/api/appointment", config);
 }
 
 export async function onAddAppointment(appointmentData) {
@@ -126,7 +126,7 @@ export async function onAddAppointment(appointmentData) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.post("http://localhost:4000/api/appointment", appointmentData, config);
+  return axios.post("https://healthbook-server.onrender.com/api/appointment", appointmentData, config);
 }
 
 export async function onDeleteAppointment(appointmentId) {
@@ -136,7 +136,7 @@ export async function onDeleteAppointment(appointmentId) {
       Authorization: `Bearer ${token}`,
     },
   };
-  return axios.delete(`http://localhost:4000/api/appointment/${appointmentId}`, config);
+  return axios.delete(`https://healthbook-server.onrender.com/api/appointment/${appointmentId}`, config);
 }
 
 export async function OnEditAppointment(appointmentId, updatedData) {
@@ -147,7 +147,7 @@ export async function OnEditAppointment(appointmentId, updatedData) {
     },
   };
   return axios.put(
-    `http://localhost:4000/api/appointment/${appointmentId}`,
+    `https://healthbook-server.onrender.com/api/appointment/${appointmentId}`,
     updatedData, config
   );
 }
