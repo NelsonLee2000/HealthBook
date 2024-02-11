@@ -16,10 +16,6 @@ export async function onLogout() {
   return axios.get("http://localhost:4000/api/logout");
 }
 
-export async function fetchProtectedInfo() {
-  return axios.get("http://localhost:4000/api/protected");
-}
-
 export async function fetchUser() {
   const token = localStorage.getItem('token');
   const config = {
@@ -31,55 +27,127 @@ export async function fetchUser() {
 }
 
 export async function onAddDoctor(doctorData) {
-  return axios.post("http://localhost:4000/api/doctor", doctorData);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.post("http://localhost:4000/api/doctor", doctorData, config);
 }
 
 export async function fetchDoctorList() {
-  return axios.get("http://localhost:4000/api/doctor");
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.get("http://localhost:4000/api/doctor", config);
 }
 
 export async function onDeleteDoctor(doctorId) {
-  return axios.delete(`http://localhost:4000/api/doctor/${doctorId}`);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.delete(`http://localhost:4000/api/doctor/${doctorId}`, config);
 }
 
 export async function onEditDoctor(doctorId, updatedData) {
-  return axios.put(`http://localhost:4000/api/doctor/${doctorId}`, updatedData);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.put(`http://localhost:4000/api/doctor/${doctorId}`, updatedData, config);
 }
 
 export async function fetchMedicineList() {
-  return axios.get("http://localhost:4000/api/medicine");
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.get("http://localhost:4000/api/medicine", config);
 }
 
 export async function onDeleteMedicine(medicineId) {
-  return axios.delete(`http://localhost:4000/api/medicine/${medicineId}`);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.delete(`http://localhost:4000/api/medicine/${medicineId}`, config);
 }
 
 export async function onAddMedicine(medicineData) {
-  return axios.post("http://localhost:4000/api/medicine", medicineData);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.post("http://localhost:4000/api/medicine", medicineData, config);
 }
 
 export async function onEditMedicine(medicineId, updatedData) {
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
   return axios.put(
     `http://localhost:4000/api/medicine/${medicineId}`,
-    updatedData
+    updatedData, config
   );
 }
 
 export async function fetchAppointmentList() {
-  return axios.get("http://localhost:4000/api/appointment");
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.get("http://localhost:4000/api/appointment", config);
 }
 
 export async function onAddAppointment(appointmentData) {
-  return axios.post("http://localhost:4000/api/appointment", appointmentData);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.post("http://localhost:4000/api/appointment", appointmentData, config);
 }
 
 export async function onDeleteAppointment(appointmentId) {
-  return axios.delete(`http://localhost:4000/api/appointment/${appointmentId}`);
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.delete(`http://localhost:4000/api/appointment/${appointmentId}`, config);
 }
 
 export async function OnEditAppointment(appointmentId, updatedData) {
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
   return axios.put(
     `http://localhost:4000/api/appointment/${appointmentId}`,
-    updatedData
+    updatedData, config
   );
 }

@@ -5,7 +5,7 @@ const { SECRET } = require("../constants");
 
 //gets information from 1 user
 exports.getUser = async (req, res) => {
-  const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
@@ -64,10 +64,10 @@ exports.login = async (req, res) => {
   }
 };
 
-//clears cookie
+//clears local storage
 exports.logout = async (req, res) => {
   try {
-    return res.status(200).clearCookie("token", { httpOnly: true }).json({
+    return res.status(200).json({
       success: true,
       message: "Logged out successfully",
     });
@@ -91,7 +91,7 @@ const verifyToken = (token) => {
 
 //gets all doctors/professionals of the user
 exports.getDoctors = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
@@ -106,7 +106,7 @@ exports.getDoctors = async (req, res) => {
 
 //creates a new doctor/professional for user
 exports.newDoctor = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   const { firstname, lastname, typeofdoc, phonenumber, location, notes } =
     req.body;
   try {
@@ -128,7 +128,7 @@ exports.newDoctor = async (req, res) => {
 
 //updates user's selected doctor/professional
 exports.editDoctor = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   const { firstname, lastname, typeofdoc, phonenumber, location, notes } =
     req.body;
   try {
@@ -161,7 +161,7 @@ exports.editDoctor = async (req, res) => {
 
 //deletes user's selected doctor/professional
 exports.deleteDoctor = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
@@ -183,7 +183,7 @@ exports.deleteDoctor = async (req, res) => {
 
 //gets all medicine of the user
 exports.getMedicine = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
@@ -199,7 +199,7 @@ exports.getMedicine = async (req, res) => {
 
 //creates a new medicine for user
 exports.newMedicine = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   const { name, func, frequency, prescription, doctorId, otherPrescriber } =
     req.body;
   try {
@@ -222,7 +222,7 @@ exports.newMedicine = async (req, res) => {
 
 //updates a selected medicine of the user
 exports.editMedicine = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   const { name, func, frequency, prescription, doctorId, otherPrescriber } =
     req.body;
   try {
@@ -255,7 +255,7 @@ exports.editMedicine = async (req, res) => {
 
 //deletes a selected medicine of the user
 exports.deleteMedicine = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
@@ -277,7 +277,7 @@ exports.deleteMedicine = async (req, res) => {
 
 //gets all appointments of the user
 exports.getAppointments = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
@@ -293,7 +293,7 @@ exports.getAppointments = async (req, res) => {
 
 //creates a new appointment for the user
 exports.newAppointment = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   const {
     title,
     date,
@@ -331,7 +331,7 @@ exports.newAppointment = async (req, res) => {
 
 //updates a selected appointment for the user
 exports.editAppointment = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   const {
     title,
     date,
@@ -372,7 +372,7 @@ exports.editAppointment = async (req, res) => {
 
 //deletes a selected appointment of the user
 exports.deleteAppointment = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization.split(" ")[1];
   try {
     const decoded = verifyToken(token);
     const userId = decoded.id;
