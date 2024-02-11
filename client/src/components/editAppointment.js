@@ -156,7 +156,7 @@ const EditAppointment = ({ appointment, appointmentList }) => {
                 </div>
 
                 <div className="mb-3">
-                  <label for="date" className="form-label">
+                  <label htmlFor="date" className="form-label">
                     Date
                   </label>
                   <input
@@ -170,7 +170,7 @@ const EditAppointment = ({ appointment, appointmentList }) => {
                 </div>
 
                 <div className="mb-3">
-                  <label for="time" className="form-label">
+                  <label htmlFor="time" className="form-label">
                     Time
                   </label>
                   <input
@@ -184,7 +184,7 @@ const EditAppointment = ({ appointment, appointmentList }) => {
                 </div>
 
                 <div className="mb-3">
-                  <label for="professional" className="form-label">
+                  <label htmlFor="professional" className="form-label">
                     Professional
                   </label>
                   <select

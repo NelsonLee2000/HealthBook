@@ -152,12 +152,6 @@ const Medicine = ({ name }) => {
                           {medicine.other_prescriber}
                         </h6>
                       ) : (
-                        // <button
-                        //         data-bs-toggle="modal"
-                        //         data-bs-target={`#infoid${appointment.doctor_id}`}
-                        //         className="btn btn-secondary me-5"
-                        //         style={{ marginLeft: -13, outline: "none" }}
-                        //       ></button>
                         <button
                           data-bs-toggle="modal"
                           data-bs-target={`#infoid${medicine.doctor_id}`}

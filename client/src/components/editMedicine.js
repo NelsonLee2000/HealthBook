@@ -194,7 +194,7 @@ const EditMedicine = ({ medicine, medicineList }) => {
                       value="false"
                       checked={!values.prescription}
                     ></input>
-                    <label className="form-check-label" for="flexRadioDefault">
+                    <label className="form-check-label" htmlFor="flexRadioDefault">
                       No
                     </label>
                   </div>
@@ -208,7 +208,7 @@ const EditMedicine = ({ medicine, medicineList }) => {
                       value="true"
                       checked={values.prescription}
                     ></input>
-                    <label className="form-check-label" for="flexRadioDefault2">
+                    <label className="form-check-label" htmlFor="flexRadioDefault2">
                       Yes
                     </label>
                   </div>
