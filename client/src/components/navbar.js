@@ -12,6 +12,7 @@ const Navbar = ({ name }) => {
       await onLogout();
       dispatch(unauthenticateUser());
       localStorage.removeItem("isAuth");
+      localStorage.removeItem("token");
     } catch (err) {
       console.log(err.response);
     }

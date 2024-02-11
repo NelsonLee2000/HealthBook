@@ -22,8 +22,13 @@ const Login = ({ getName }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await onLogin(values);
+      // await onLogin(values);
+      // dispatch(authenticateUser());
+      // localStorage.setItem("isAuth", "true");
+      // getName();
+      const { data } = await onLogin(values);
       dispatch(authenticateUser());
+      localStorage.setItem('token', data.token);
       localStorage.setItem("isAuth", "true");
       getName();
     } catch (err) {

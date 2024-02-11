@@ -11,7 +11,7 @@ require('./middlewares/passport-middleware')
 //initialize middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin: CLIENT_URL, credentials: true})); 
+app.use(cors({origin: 'http://localhost:3000', credentials: true})); 
 app.use(passport.initialize())
 
 
@@ -25,8 +25,8 @@ app.use('/api', authRoutes);
 
 const appStart = () => {
     try {
-        app.listen(PORT, () => {
-            console.log(`The app is running at http://localhost:${PORT}`);
+        app.listen(4000, () => {
+            console.log(`The app is running at http://localhost:4000`);
         });
     } catch (err) {
         console.error(err.message);

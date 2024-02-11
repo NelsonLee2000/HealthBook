@@ -21,7 +21,13 @@ export async function fetchProtectedInfo() {
 }
 
 export async function fetchUser() {
-  return axios.get("http://localhost:4000/api/user");
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.get("http://localhost:4000/api/user", config);
 }
 
 export async function onAddDoctor(doctorData) {
