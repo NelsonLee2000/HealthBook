@@ -30,7 +30,7 @@ const Navbar = ({ name }) => {
         </div>
 
         {isAuth ? (
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center flex-wrap">
             <NavLink
               to="/doctor"
               className="navbar-brand mb-0 text-secondary mx-4"
