@@ -78,11 +78,7 @@ const Appointment = ({ name }) => {
       const { data } = await fetchAppointmentList();
       setAppointment(data);
       setLoading(false);
-      console.log('data', data)
-      console.log('upComingAppointments', upComingApp)
-      console.log('formattedUpcomingAppointments', upComingApp.map((appointment) => {
-        noYearDate(appointment)
-      }) )
+      console.log("data", data);
     } catch (err) {
       logout();
     }
@@ -91,6 +87,16 @@ const Appointment = ({ name }) => {
   useEffect(() => {
     appointmentList();
   }, []);
+
+  useEffect(() => {
+    console.log("upComingAppointments", upComingApp);
+    console.log(
+      "formattedUpcomingAppointments",
+      upComingApp.map((appointment) => {
+        noYearDate(appointment);
+      })
+    );
+  }, [appointment]);
 
   return loading ? (
     <Layout name={name}>
