@@ -93,7 +93,7 @@ const Appointment = ({ name }) => {
     console.log(
       "formattedUpcomingAppointments",
       upComingApp.map((appointment) => {
-        noYearDate(appointment);
+        return noYearDate(appointment);
       })
     );
   }, [appointment]);
