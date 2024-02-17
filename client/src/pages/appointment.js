@@ -78,6 +78,11 @@ const Appointment = ({ name }) => {
       const { data } = await fetchAppointmentList();
       setAppointment(data);
       setLoading(false);
+      console.log('data', data)
+      console.log('upComingAppointments', upComingApp)
+      console.log('formattedUpcomingAppointments', upComingApp.map((appointment) => {
+        noYearDate(appointment)
+      }) )
     } catch (err) {
       logout();
     }
