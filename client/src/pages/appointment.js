@@ -39,6 +39,7 @@ const Appointment = ({ name }) => {
     return new Date(appt).toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
+      timeZone: "UTC"
     });
   };
 
