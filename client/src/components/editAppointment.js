@@ -130,7 +130,7 @@ const EditAppointment = ({ appointment, appointmentList }) => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Edit Appointmente
+                  Edit Appointment
                 </h5>
                 <button
                   type="button"
