@@ -89,16 +89,6 @@ const Appointment = ({ name }) => {
     appointmentList();
   }, []);
 
-  useEffect(() => {
-    console.log("upComingAppointments", upComingApp);
-    console.log(
-      "formattedUpcomingAppointments",
-      upComingApp.map((appointment) => {
-        return noYearDate(appointment);
-      })
-    );
-  }, [appointment]);
-
   return loading ? (
     <Layout name={name}>
       <h1>Loading...</h1>
