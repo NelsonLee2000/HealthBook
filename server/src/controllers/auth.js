@@ -41,7 +41,7 @@ exports.register = async (req, res) => {
   }
 };
 
-const oneHour = 1000 * 60 * 60;
+const twoHour = 2 * 1000 * 60 * 60;
 
 //gives login cookie
 exports.login = async (req, res) => {
@@ -51,14 +51,14 @@ exports.login = async (req, res) => {
     email: user.email,
   };
   try {
-    const token = await sign(payload, SECRET, { expiresIn: oneHour });
+    const token = await sign(payload, SECRET, { expiresIn: twoHour });
     return res
       .status(200)
       .cookie("token", token, {
         httpOnly: true,
         sameSite: "None",
         secure: true,
-        maxAge: oneHour
+        maxAge: twoHour
       })
       .json({
         success: true,
