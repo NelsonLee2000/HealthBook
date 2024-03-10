@@ -200,4 +200,4 @@ Next:
   - try to get a custom domain so that both client and server side can have the same root domain, this way cookies that are sent from the server are legal cookies
 
 Feb 11, 2024
-Finally solved the problem. cookie is fine in the client side, I just needed to make a rewrite rule on render.com so that the client side will go index.js for react-routing. Project is full functional and deployed
+Finally solved the problem. cookie is fine in the client side, I just needed to make a rewrite rule on render.com so that the client side will go index.js for react-routing. Project is fully functional and deployed
