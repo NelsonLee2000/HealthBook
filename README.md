@@ -1,6 +1,6 @@
 # HealthBook
 
-HealthBook is a web application that allows users to organize and manage their healthcare data: medical providers, medicine prescriptions, and appointments.
+HealthBook is a web application that allows users to easily organize and manage their healthcare data. From medical provider information to appointment details, Healthbook allows patients to store important personal health data in one secure place.
 
 ## Why?
 
